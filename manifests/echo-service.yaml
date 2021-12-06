@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: echo-server
+  namespace: gitops-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: echo-server
+  template:
+    metadata:
+      labels:
+        app: echo-server
+    spec:
+      containers:
+        - name: echo-server
+          image: jmalloc/echo-server
+          ports:
+            - name: http-port
+              containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: echo-server
+  namespace: gitops-demo
+spec:
+  ports:
+    - name: http-port
+      port: 80
+      targetPort: http-port
+      protocol: TCP
+  selector:
+    app: echo-server
+---
+apiVersion: x.getambassador.io/v3alpha1
+kind: AmbassadorMapping
+metadata:
+  name: echo-server
+  namespace: gitops-demo
+spec:
+  hostname: '*'
+  prefix: /
+  service: echo-server
