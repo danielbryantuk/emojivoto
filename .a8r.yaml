@@ -3,3 +3,7 @@ k8s_config:
   cluster_info:
     cluster_id: 75954ac9-d455-55a5-bbfd-e1b4a694250a
     cluster_name: Edidiong Asikpo's cluster
+- manifest_path: /manifests
+  cluster_info:
+    cluster_id: 75954ac9-d455-55a5-bbfd-e1b4a694250a
+    cluster_name: Edidiong Asikpo's cluster
