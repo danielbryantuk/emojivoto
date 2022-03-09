@@ -1,0 +1,15 @@
+apiVersion: getambassador.io/v3alpha1
+kind: Mapping
+metadata:
+  name: web-app-mapping-1646830499912
+  namespace: emojivoto
+spec:
+  service: web-app.emojivoto:80
+  timeout_ms: 3000
+  connect_timeout_ms: 3000
+  retry_policy:
+    retry_on: 5xx
+    num_retries: 1
+    per_try_timeout: 0.150s
+  hostname: "*"
+  prefix: /api
