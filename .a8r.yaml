@@ -1,5 +1,0 @@
-k8s_config:
-- manifest_path: /manifests
-  cluster_info:
-    cluster_id: 21a74408-391d-51bf-a932-8a52d99018c3
-    cluster_name: aes2 cluster
