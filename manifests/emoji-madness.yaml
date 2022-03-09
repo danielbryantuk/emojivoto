@@ -1,0 +1,9 @@
+---
+apiVersion: getambassador.io/v3alpha1
+kind: Mapping
+metadata:
+  name: more-emoji-madness
+spec:
+  hostname: "*"
+  prefix: /
+  service: more-emoji-madness:8080
