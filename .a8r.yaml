@@ -1,0 +1,5 @@
+k8s_config:
+- manifest_path: /manifest
+  cluster_info:
+    cluster_id: 9afe00e4-8468-5df6-b9a6-f3298c3d6b86
+    cluster_name: March Demo Cluster
